@@ -1,6 +1,9 @@
 import SafeAreaView from 'react-native-safe-area-view';
-import { View, Text, ScrollView } from 'react-native';
+import { View, Text, ScrollView, Image } from 'react-native';
 import { Stack, useRouter } from 'expo-router';
+
+// import challahImage from '../assets/images/challah.jpg';
+import images from '../assets/images'
 
 export default function Home() {
   return (
@@ -10,7 +13,7 @@ export default function Home() {
           Look, I'm safe! Not under a status bar or notch or home indicator or
           anything! Very cool
         </Text>
-        <Image source={images.challah}/>
+        <Image source={images.challah} style={{ width: 200, height: 200 }}/>
       </View>
     </SafeAreaView>
   );
