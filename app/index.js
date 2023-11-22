@@ -1,8 +1,6 @@
 import SafeAreaView from 'react-native-safe-area-view';
 import { View, Text, ScrollView, Image } from 'react-native';
 import { Stack, useRouter } from 'expo-router';
-
-// import challahImage from '../assets/images/challah.jpg';
 import images from '../assets/images'
 
 export default function Home() {

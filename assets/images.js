@@ -1,6 +1,9 @@
 const images = {
     challah: require('./images/challah.jpg'),
-    // Add other images here
+    kotel: require('./images/kotel.jpeg'),
+    magendavid: require('./images/magendavid.jpeg'),
+    
+    
   };
   
   export default images;
