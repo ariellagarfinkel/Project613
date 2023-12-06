@@ -7,6 +7,7 @@ const theme = {
     ...DefaultTheme.colors,
     primary: '#663399',
     secondary: 'yellow',
+    tertiary: 'pink',
   },
 };
 
