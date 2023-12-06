@@ -3,11 +3,14 @@ import { View, Text, ScrollView, Image } from 'react-native';
 import { Stack, useRouter } from 'expo-router';
 import { useTheme } from 'react-native-paper';
 import images from '../assets/images';
+import TopBar from './topbar';
+import BottomBar from './bottombar';
 
 export default function Home() {
     const theme = useTheme()
   return (
     <SafeAreaView style={{ flex: 1 }}>
+      <TopBar />
       <View style={{ flex: 1, backgroundColor: theme.colors.tertiary }}>
         <Text>
           Look, I'm safe! Not under a status bar or notch or home indicator or
@@ -17,6 +20,7 @@ export default function Home() {
         <Image source={images.magendavid} style={{ width: 200, height: 200 }}/>
         <Image source={images.kotel} style={{ width: 200, height: 200 }}/>
       </View>
+      <BottomBar />
     </SafeAreaView>
   );
 }
