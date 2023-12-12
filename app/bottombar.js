@@ -6,7 +6,7 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 const BOTTOM_APPBAR_HEIGHT = 80;
 const MEDIUM_FAB_HEIGHT = 56;
 
-const MyComponent = () => {
+const BottomBar = () => {
   const { bottom } = useSafeAreaInsets();
   const theme = useTheme();
 
@@ -53,4 +53,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default MyComponent;
+export default BottomBar;
