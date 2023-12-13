@@ -5,12 +5,14 @@ import { useTheme } from 'react-native-paper';
 import images from '../assets/images';
 import TopBar from './topbar';
 import BottomBar from './bottombar';
+import Tabs from './tabs';
 
 export default function Home() {
     const theme = useTheme()
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <TopBar />
+      <Tabs />
       <View style={{ flex: 1, backgroundColor: theme.colors.tertiary }}>
         <Text>
           Look, I'm safe! Not under a status bar or notch or home indicator or
