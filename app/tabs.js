@@ -1,26 +1,43 @@
 import * as React from 'react';
 import { View, useWindowDimensions } from 'react-native';
 import { TabView, SceneMap } from 'react-native-tab-view';
+import Tab1 from './tab1'
+import { Avatar, Button, Card, Text } from 'react-native-paper';
+
 
 const FirstRoute = () => (
-  <View style={{ flex: 1, backgroundColor: '#ff4081' }} />
+  <View>
+  <Card>
+  <Card.Actions>
+    <Button>Who We Are</Button>
+    <Button>Our History</Button>
+    <Button>Staff Bios</Button>
+    <Button>Affiliate Partners</Button>
+  </Card.Actions>
+</Card>
+</View>
 );
 
 const SecondRoute = () => (
-  <View style={{ flex: 1, backgroundColor: '#673ab7' }} />
+  <View style={{ flex: 1, backgroundColor: '#ff4081' }} />
 );
+
 const ThirdRoute = () => (
   <View style={{ flex: 1, backgroundColor: '#673ab7' }} />
 );
+
 const FourthRoute = () => (
   <View style={{ flex: 1, backgroundColor: '#673ab7' }} />
 );
+
 const FifthRoute = () => (
   <View style={{ flex: 1, backgroundColor: '#673ab7' }} />
 );
+
 const SixthRoute = () => (
   <View style={{ flex: 1, backgroundColor: '#673ab7' }} />
 );
+
 const SeventhRoute = () => (
   <View style={{ flex: 1, backgroundColor: '#673ab7' }} />
 );
@@ -50,12 +67,18 @@ export default function Tabs() {
   ]);
 
   return (
-    <TabView
-      navigationState={{ index, routes }}
-      renderScene={renderScene}
-      onIndexChange={setIndex}
-      initialLayout={{ width: layout.width }}
-    />
+    <View>
+      <TabView
+        navigationState={{ index, routes }}
+        renderScene={renderScene}
+        onIndexChange={setIndex}
+        initialLayout={{ width: layout.width }}
+      />
+      {/* <View>
+        <Tab1 />
+      </View> */}
+    </View>
+   
   );
 }
 

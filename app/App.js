@@ -10,7 +10,7 @@ import Tabs from './tabs';
 export default function Home() {
     const theme = useTheme()
   return (
-    <SafeAreaView style={{ flex: 1 }}>
+    <View style={{ flex: 1 }}>
       <TopBar />
       <Tabs />
       <View style={{ flex: 1, backgroundColor: theme.colors.tertiary }}>
@@ -23,6 +23,6 @@ export default function Home() {
         <Image source={images.kotel} style={{ width: 200, height: 200 }}/>
       </View>
       <BottomBar />
-    </SafeAreaView>
+    </View>
   );
 }
