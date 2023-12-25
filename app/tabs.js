@@ -1,23 +1,25 @@
 import * as React from 'react';
-import { View, useWindowDimensions } from 'react-native';
-import { TabView, SceneMap } from 'react-native-tab-view';
-import Tab1 from './tab1'
-import { Avatar, Button, Card, Text } from 'react-native-paper';
+import { TouchableOpacity, View, useWindowDimensions, SafeAreaView, StyleSheet } from 'react-native';
+import { TabView, SceneMap, Alert } from 'react-native-tab-view';
+import Tab1 from './tab1';
+import { Avatar, Button, Card, Text, SegmentedButtons} from 'react-native-paper';
 
+// const FirstRoute = () => (
+//   <View>
+//   <Card>
+//   <Card.Actions>
+//     <TouchableOpacity>Who We Are</TouchableOpacity>
+//     <TouchableOpacity>Our History</TouchableOpacity>
+//     <TouchableOpacity>Staff Bios</TouchableOpacity>
+//     <TouchableOpacity>Affiliate Partners</TouchableOpacity>
+//   </Card.Actions>
+// </Card>
+// </View>
+// );
 
 const FirstRoute = () => (
-  <View>
-  <Card>
-  <Card.Actions>
-    <Button>Who We Are</Button>
-    <Button>Our History</Button>
-    <Button>Staff Bios</Button>
-    <Button>Affiliate Partners</Button>
-  </Card.Actions>
-</Card>
-</View>
-);
-
+    <Tab1 />
+  )
 const SecondRoute = () => (
   <View style={{ flex: 1, backgroundColor: '#ff4081' }} />
 );
@@ -74,9 +76,6 @@ export default function Tabs() {
         onIndexChange={setIndex}
         initialLayout={{ width: layout.width }}
       />
-      {/* <View>
-        <Tab1 />
-      </View> */}
     </View>
    
   );
