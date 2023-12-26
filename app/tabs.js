@@ -4,19 +4,6 @@ import { TabView, SceneMap, Alert } from 'react-native-tab-view';
 import Tab1 from './tab1';
 import { Avatar, Button, Card, Text, SegmentedButtons} from 'react-native-paper';
 
-// const FirstRoute = () => (
-//   <View>
-//   <Card>
-//   <Card.Actions>
-//     <TouchableOpacity>Who We Are</TouchableOpacity>
-//     <TouchableOpacity>Our History</TouchableOpacity>
-//     <TouchableOpacity>Staff Bios</TouchableOpacity>
-//     <TouchableOpacity>Affiliate Partners</TouchableOpacity>
-//   </Card.Actions>
-// </Card>
-// </View>
-// );
-
 const FirstRoute = () => (
     <Tab1 />
   )
