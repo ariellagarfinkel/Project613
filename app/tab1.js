@@ -6,43 +6,97 @@ const LeftContent = props => <Avatar.Icon {...props} icon="folder" />
 
 const Tab1 = () => {
 
-    const [visible, setVisible] = React.useState(false);
-    const hideDialog = () => (setVisible(false));
+    const [visibleWhoWeAre, setVisibleWhoWeAre] = React.useState(false);
+    const [visibleWhatWeDo, setVisibleWhatWeDo] = React.useState(false);
+    const [visibleOurHistory, setVisibleOurHistory] = React.useState(false);
+    const [visibleStaffBios, setVisibleStaffBios] = React.useState(false);
+    const [visibleAffiliatePartners, setVisibleAffiliatePartners] = React.useState(false);
+    const hideDialog = () => {
+        setVisibleWhoWeAre(false);
+        setVisibleWhatWeDo(false);
+        setVisibleOurHistory(false);
+        setVisibleStaffBios(false);
+        setVisibleAffiliatePartners(false);
+    }
+   
 
 return (
     <ScrollView>
         <Card>
         <Card.Actions style={{ justifyContent: 'center', alignItems: 'center' }}>
-            <Button onPress={() => { setVisible(true); console.log('Pressed')}} mode= "outlined">
+            <Button onPress={() => { setVisibleWhoWeAre(true); console.log('Who We Are')}} mode= "outlined">
                 Who We Are
             </Button>
-            <Button onPress={() => { setVisible(true); console.log('Pressed')}} mode= "outlined">
+            <Button onPress={() => { setVisibleWhatWeDo(true); console.log('What We Do')}} mode= "outlined">
                 What We Do
             </Button>
-            <Button onPress={() => { setVisible(true); console.log('Pressed')}} mode= "outlined">
+            <Button onPress={() => { setVisibleOurHistory(true); console.log('Our History')}} mode= "outlined">
                 Our History
             </Button>
-            <Button onPress={() => { setVisible(true); console.log('Pressed')}} mode= "outlined">
+            <Button onPress={() => { setVisibleStaffBios(true); console.log('Staff Bios')}} mode= "outlined">
                 Staff Bios
             </Button>
-            <Button onPress={() => { setVisible(true); console.log('Pressed')}} mode= "outlined">
+            <Button onPress={() => { setVisibleAffiliatePartners(true); console.log('Affiliate Partners')}} mode= "outlined">
                 Affiliate Partners
             </Button>
-         </Card.Actions>
+        </Card.Actions>
          </Card>
          <Portal>
-          <Dialog visible={visible} onDismiss={hideDialog}>
+          <Dialog visible={visibleWhoWeAre} onDismiss={hideDialog}>
              <Dialog.ScrollArea>
              <ScrollView contentContainerStyle={{paddingHorizontal: 24}}>
-             <Text>History</Text>
+             <Text>Who We Are</Text>
              </ScrollView>
              </Dialog.ScrollArea>
-             </Dialog>
+          </Dialog>
+          <Dialog visible={visibleWhatWeDo} onDismiss={hideDialog}>
+             <Dialog.ScrollArea>
+             <ScrollView contentContainerStyle={{paddingHorizontal: 24}}>
+             <Text>What We Do</Text>
+             </ScrollView>
+             </Dialog.ScrollArea>
+          </Dialog>
+          <Dialog visible={visibleOurHistory} onDismiss={hideDialog}>
+             <Dialog.ScrollArea>
+             <ScrollView contentContainerStyle={{paddingHorizontal: 24}}>
+             <Text>Our History</Text>
+             </ScrollView>
+             </Dialog.ScrollArea>
+          </Dialog>
+          <Dialog visible={visibleStaffBios} onDismiss={hideDialog}>
+             <Dialog.ScrollArea>
+             <ScrollView contentContainerStyle={{paddingHorizontal: 24}}>
+             <Text>Staff Bios</Text>
+             </ScrollView>
+             </Dialog.ScrollArea>
+          </Dialog>
+          <Dialog visible={visibleAffiliatePartners} onDismiss={hideDialog}>
+             <Dialog.ScrollArea>
+             <ScrollView contentContainerStyle={{paddingHorizontal: 24}}>
+             <Text>Affiliate Partners</Text>
+             </ScrollView>
+             </Dialog.ScrollArea>
+          </Dialog>
         </Portal>
        </ScrollView>
   );
 };
   
   export default Tab1;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
