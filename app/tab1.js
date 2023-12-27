@@ -5,31 +5,12 @@ import { Avatar, Card, Button, Dialog, Portal, Text } from 'react-native-paper';
 const LeftContent = props => <Avatar.Icon {...props} icon="folder" />
 
 const Tab1 = () => {
-    // const handleWhoWeArePress = () => {
-    //     console.log("Who We Are");
-    //     Alert.alert("Who We Are");
-    // };
+
     const [visible, setVisible] = React.useState(false);
     const hideDialog = () => (setVisible(false));
-// return (
-//     <Portal>
-//         <Button onPress={() => setVisible(true)} mode="outlined">
-//             Show Dialog
-//         </Button>
 
-//       <Dialog visible={visible} onDismiss={hideDialog}>
-//         <Dialog.ScrollArea>
-//           <ScrollView contentContainerStyle={{paddingHorizontal: 24}}>
-//             <Text>History</Text>
-//           </ScrollView>
-//         </Dialog.ScrollArea>
-//       </Dialog>
-//     </Portal>
-         
-  
-//   );
 return (
-    <Portal>
+    <ScrollView>
         <Card>
         <Card.Actions style={{ justifyContent: 'center', alignItems: 'center' }}>
             <Button onPress={() => { setVisible(true); console.log('Pressed')}} mode= "outlined">
@@ -48,15 +29,17 @@ return (
                 Affiliate Partners
             </Button>
          </Card.Actions>
-         </Card> 
+         </Card>
+         <Portal>
           <Dialog visible={visible} onDismiss={hideDialog}>
              <Dialog.ScrollArea>
              <ScrollView contentContainerStyle={{paddingHorizontal: 24}}>
              <Text>History</Text>
              </ScrollView>
              </Dialog.ScrollArea>
-             </Dialog> 
-       </Portal>
+             </Dialog>
+        </Portal>
+       </ScrollView>
   );
 };
   
