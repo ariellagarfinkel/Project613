@@ -32,19 +32,19 @@ return (
     <Portal>
         <Card>
         <Card.Actions style={{ justifyContent: 'center', alignItems: 'center' }}>
-            <Button onPress={() => setVisible(true)} mode= "outlined">
+            <Button onPress={() => { setVisible(true); console.log('Pressed')}} mode= "outlined">
                 Who We Are
             </Button>
-            <Button onPress={() => console.log('Pressed')} mode= "outlined">
+            <Button onPress={() => { setVisible(true); console.log('Pressed')}} mode= "outlined">
                 What We Do
             </Button>
-            <Button onPress={() => console.log('Pressed')} mode= "outlined">
+            <Button onPress={() => { setVisible(true); console.log('Pressed')}} mode= "outlined">
                 Our History
             </Button>
-            <Button onPress={() => console.log('Pressed')} mode= "outlined">
+            <Button onPress={() => { setVisible(true); console.log('Pressed')}} mode= "outlined">
                 Staff Bios
             </Button>
-            <Button onPress={() => console.log('Pressed')} mode= "outlined">
+            <Button onPress={() => { setVisible(true); console.log('Pressed')}} mode= "outlined">
                 Affiliate Partners
             </Button>
          </Card.Actions>
