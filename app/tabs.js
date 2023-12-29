@@ -3,6 +3,7 @@ import { TouchableOpacity, View, useWindowDimensions, SafeAreaView, StyleSheet }
 import { TabView, SceneMap, Alert } from 'react-native-tab-view';
 import Tab1 from './tab1';
 import { Avatar, Button, Card, Text, SegmentedButtons} from 'react-native-paper';
+import { useFonts } from 'expo-font'; 
 
 const FirstRoute = () => (
     <Tab1 />
@@ -41,6 +42,16 @@ const renderScene = SceneMap({
   seventh: SeventhRoute,
 });
 
+const TabBarLabel = ({ route, focused }) => {
+  return (
+    <Text style={{ fontFamily: 'DMSans-Bold', fontSize: 16, color: focused ? '#000000' : '#808080' }}>
+      {route.title}
+    </Text>
+  );
+};
+
+
+
 export default function Tabs() {
   const layout = useWindowDimensions();
 
@@ -62,6 +73,7 @@ export default function Tabs() {
         renderScene={renderScene}
         onIndexChange={setIndex}
         initialLayout={{ width: layout.width }}
+        renderTabBar={(props) => <TabBarLabel {...props} />}
       />
     </View>
    
