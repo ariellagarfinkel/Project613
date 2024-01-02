@@ -1,9 +1,10 @@
 import * as React from 'react';
-import { TouchableOpacity, View, useWindowDimensions, SafeAreaView, StyleSheet } from 'react-native';
-import { TabView, SceneMap, Alert } from 'react-native-tab-view';
+import { View, useWindowDimensions } from 'react-native';
+import { TabView, SceneMap } from 'react-native-tab-view';
 import Tab1 from './tab1';
 import { Avatar, Button, Card, Text, SegmentedButtons} from 'react-native-paper';
 import { useFonts } from 'expo-font'; 
+import Layout from './_layout'
 
 const FirstRoute = () => (
     <Tab1 />
@@ -44,7 +45,7 @@ const renderScene = SceneMap({
 
 const TabBarLabel = ({ route, focused }) => {
   return (
-    <Text style={{ fontFamily: 'DMSans-Bold', fontSize: 16, color: focused ? '#000000' : '#808080' }}>
+    <Text style={{ fontFamily: 'DMBold', fontSize: 16  }}>
       {route.title}
     </Text>
   );
@@ -68,6 +69,7 @@ export default function Tabs() {
 
   return (
     <View>
+      <Layout />
       <TabView
         navigationState={{ index, routes }}
         renderScene={renderScene}
