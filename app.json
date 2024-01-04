@@ -8,6 +8,9 @@
       "expo-router"
     ],
     "name": "Project613",
-    "slug": "Project613"
+    "slug": "Project613",
+    "assetBundlePatterns": [
+      "assets/**"
+    ]
   }
 }

@@ -6,9 +6,29 @@ import images from '../assets/images';
 import TopBar from './topbar';
 import BottomBar from './bottombar';
 import Tabs from './tabs';
+import React, { useEffect } from 'react';
+import { useFonts } from 'expo-font';
+import { SplashScreen } from 'expo';
 
 export default function Home() {
     const theme = useTheme()
+    const [fontsLoaded] = useFonts({
+      DMBold: require('../assets/fonts/DMSans-Bold.ttf'),
+      DMMedium: require('../assets/fonts/DMSans-Medium.ttf'),
+      DMRegular: require('../assets/fonts/DMSans-Regular.ttf'),
+    });
+  
+    useEffect(() => {
+      // Hide SplashScreen after fonts are loaded
+      if (fontsLoaded) {
+        SplashScreen.hideAsync();
+      }
+    }, [fontsLoaded]);
+  
+    if (!fontsLoaded) {
+      return null; // or render a loading indicator
+    }
+  
   return (
     <View style={{ flex: 1 }}>
       <TopBar />
