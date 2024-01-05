@@ -43,17 +43,17 @@ const renderScene = SceneMap({
   seventh: SeventhRoute,
 });
 
-const TabBarLabel = ({ route, focused }) => {
-  return (
-    <Text style={{ fontFamily: 'DMBold', fontSize: 16  }}>
-      {route.title}
-    </Text>
-  );
-};
+// const TabBarLabel = ({ route, focused }) => {
+//   return (
+//     <Text style={{ fontFamily: 'DMBold', fontSize: 16  }}>
+//       {route.title}
+//     </Text>
+//   );
+// };
 
 
 
-export default function Tabs() {
+const Tabs = ({ route, focused }) => {
   const layout = useWindowDimensions();
 
   const [index, setIndex] = React.useState(0);
@@ -67,6 +67,19 @@ export default function Tabs() {
     { key: 'seventh', title: 'Contact Us' },
   ]);
 
+  const renderTabBar = (props) => (
+    <TabBar
+      {...props}
+      indicatorStyle={{ backgroundColor: 'white' }}
+      style={{ backgroundColor: '#333' }}
+      renderLabel={({ route, focused, color }) => (
+        <Text style={{ color: focused ? 'white' : 'gray', fontFamily: 'DMBold', fontSize: 16 }}>
+          {route.title}
+        </Text>
+      )}
+    />
+  );
+
   return (
     <View>
       <Layout />
@@ -75,10 +88,12 @@ export default function Tabs() {
         renderScene={renderScene}
         onIndexChange={setIndex}
         initialLayout={{ width: layout.width }}
-        renderTabBar={(props) => <TabBarLabel {...props} />}
-      />
+        renderTabBar={renderTabBar}
+        />
     </View>
    
   );
 }
+
+export default Tabs; 
 
