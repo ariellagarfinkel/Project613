@@ -6,31 +6,24 @@ import images from '../assets/images';
 import TopBar from './topbar';
 import BottomBar from './bottombar';
 import Tabs from './tabs';
-import React, { useEffect } from 'react';
 import { useFonts } from 'expo-font';
 import { SplashScreen } from 'expo';
+import { useState, useEffect } from 'react';
+// import {Text, View, StyleSheet } from 'react-native';
+import * as Font from 'expo-font';
 
-export default function Home() {
+const Home = () => {
     const theme = useTheme()
-    const [fontsLoaded] = useFonts({
-      DMBold: require('../assets/fonts/DMSans-Bold.ttf'),
-      DMMedium: require('../assets/fonts/DMSans-Medium.ttf'),
-      DMRegular: require('../assets/fonts/DMSans-Regular.ttf'),
-    });
-  
-    useEffect(() => {
-      // Hide SplashScreen after fonts are loaded
-      if (fontsLoaded) {
-        SplashScreen.hideAsync();
-      }
-    }, [fontsLoaded]);
-  
-    if (!fontsLoaded) {
-      return null; // or render a loading indicator
-    }
   
   return (
-    <View style={{ flex: 1 }}>
+    <View style={{ flex: 1, backgroundColor: theme.colors.secondary }}>
+     <Stack.Screen
+               options={{
+                    headerStyle: { backgroundColor: theme.colors.secondary },
+                   headerShadowVisible: false,
+                   headerTitle: "",
+               }}
+      />
       <TopBar />
       <Tabs />
       <View style={{ flex: 1, backgroundColor: theme.colors.tertiary }}>
@@ -46,3 +39,16 @@ export default function Home() {
     </View>
   );
 }
+
+export default Home;
+
+
+// return (
+//   <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.lightWhite }}>
+//       <Stack.Screen
+//           options={{
+//               headerStyle: { backgroundColor: COLORS.lightWhite },
+//               headerShadowVisible: false,
+//               headerTitle: "",
+//           }}
+//       />

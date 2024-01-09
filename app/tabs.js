@@ -3,8 +3,8 @@ import { View, useWindowDimensions } from 'react-native';
 import { TabView, SceneMap } from 'react-native-tab-view';
 import Tab1 from './tab1';
 import { Avatar, Button, Card, Text, SegmentedButtons} from 'react-native-paper';
-import { useFonts } from 'expo-font'; 
-import Layout from './_layout'
+// import { useFonts } from 'expo-font'; 
+// import Layout from './_layout'
 
 const FirstRoute = () => (
     <Tab1 />
@@ -43,15 +43,6 @@ const renderScene = SceneMap({
   seventh: SeventhRoute,
 });
 
-// const TabBarLabel = ({ route, focused }) => {
-//   return (
-//     <Text style={{ fontFamily: 'DMBold', fontSize: 16  }}>
-//       {route.title}
-//     </Text>
-//   );
-// };
-
-
 
 const Tabs = ({ route, focused }) => {
   const layout = useWindowDimensions();
@@ -67,28 +58,28 @@ const Tabs = ({ route, focused }) => {
     { key: 'seventh', title: 'Contact Us' },
   ]);
 
-  const renderTabBar = (props) => (
-    <TabBar
-      {...props}
-      indicatorStyle={{ backgroundColor: 'white' }}
-      style={{ backgroundColor: '#333' }}
-      renderLabel={({ route, focused, color }) => (
-        <Text style={{ color: focused ? 'white' : 'gray', fontFamily: 'DMBold', fontSize: 16 }}>
-          {route.title}
-        </Text>
-      )}
-    />
-  );
+  // const renderTabBar = (props) => (
+  //   <TabBar
+  //     {...props}
+  //     indicatorStyle={{ backgroundColor: 'white' }}
+  //     style={{ backgroundColor: '#333' }}
+  //     renderLabel={({ route, focused, color }) => (
+  //       <Text style={{ color: focused ? 'white' : 'gray', fontFamily: 'DMBold', fontSize: 16 }}>
+  //         {route.title}
+  //       </Text>
+  //     )}
+  //   />
+  // );
 
   return (
     <View>
-      <Layout />
+      {/* <Layout /> */}
       <TabView
         navigationState={{ index, routes }}
         renderScene={renderScene}
         onIndexChange={setIndex}
         initialLayout={{ width: layout.width }}
-        renderTabBar={renderTabBar}
+        // renderTabBar={renderTabBar}
         />
     </View>
    
